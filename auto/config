@@ -3,7 +3,6 @@
 set -ex
 
 lb config noauto \
-    --color \
     --architecture amd64 \
     --archive-area "main contrib non-free non-free-firmware" \
     --bootappend-live "boot=live components" locales=zh_CN.UTF-8 \
@@ -21,8 +20,6 @@ lb config noauto \
     --mirror-chroot https://mirrors.163.com/debian \
     --mirror-chroot-security https://mirrors.163.com/debian-security \
     --mirror-debian-installer https://mirrors.163.com/debian \
-    --uefi-secure-boot enable \
     --security true \
-    --updates true \
     --debug \
     "${@}"
