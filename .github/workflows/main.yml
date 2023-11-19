@@ -16,4 +16,4 @@ jobs:
     - uses: rokibhasansagar/slimhub_actions@main
     - run: sudo apt-get -y install live-build
     - run: lb config
-    - run: lb build
+    - run: sudo lb build
