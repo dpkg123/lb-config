@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
 
-    - uses: rokibhasansagar/slimhub_actions@main
+  #  - uses: rokibhasansagar/slimhub_actions@main
     - run: sudo apt-get -y install live-build
     - run: lb config
     - run: sudo lb build
