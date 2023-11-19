@@ -17,3 +17,4 @@ jobs:
     - run: sudo apt-get -y install live-build
     - run: lb config
     - run: sudo lb build
+    - run: ls
