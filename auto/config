@@ -22,4 +22,5 @@ lb config noauto \
     --mirror-debian-installer http://deb.debian.org/debian \
     --security true \
     --debug \
+    --apt-secure false \
     "${@}"
