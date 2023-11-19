@@ -1,0 +1,19 @@
+name: ci
+on:
+  pull_request:
+  workflow_dispatch:
+  
+jobs:
+  yaml-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - uses: rokibhasansagar/slimhub_actions@main
+    - run: sudo apt-get -y --install-suggests install live-build
+    - run: lb config
+    - run: lb build
