@@ -14,12 +14,12 @@ lb config noauto \
     --iso-publisher "Buildroot Project" \
     --iso-volume "Buildroot Live" \
     --linux-packages "linux-image linux-headers" \
-    --mirror-binary https://mirrors.163.com/debian \
+    --mirror-binary http://deb.debian.org/debian \
     --mirror-binary-security https://mirrors.163.com/debian-security \
-    --mirror-bootstrap https://mirrors.163.com/debian \
-    --mirror-chroot https://mirrors.163.com/debian \
-    --mirror-chroot-security https://mirrors.163.com/debian-security \
-    --mirror-debian-installer https://mirrors.163.com/debian \
+    --mirror-bootstrap http://deb.debian.org/debian \
+    --mirror-chroot http://mirrors.163.com/debian \
+    --mirror-chroot-security http://mirrors.163.com/debian-security \
+    --mirror-debian-installer http://deb.debian.org/debian \
     --security true \
     --debug \
     "${@}"
