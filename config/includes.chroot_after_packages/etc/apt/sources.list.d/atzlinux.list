@@ -1,0 +1,2 @@
+deb [trusted=yes] https://apt.atzlinux.com/atzlinux bookworm main contrib non-free non-free-firmware
+

@@ -1,0 +1,11 @@
+build-essential
+gdb
+nodejs
+npm
+golang
+python3
+git
+git-lfs
+adb
+lxc
+clang
