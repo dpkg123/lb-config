@@ -2,4 +2,4 @@
 
 set -ex
 
-lb build --apt-secure false noauto "${@}" 2>&1 | tee build.log
+lb build noauto "${@}" 2>&1 | tee build.log
