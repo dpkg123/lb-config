@@ -3,4 +3,5 @@ live-config
 live-config-systemd
 systemd-sysv
 debian-installer-launcher
+debian-installer
 debootstrap
