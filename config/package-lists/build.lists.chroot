@@ -9,3 +9,7 @@ git-lfs
 adb
 lxc
 clang
+cmake
+automake
+autoconf
+pmbootstrap
