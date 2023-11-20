@@ -14,9 +14,9 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
 
-  #  - uses: rokibhasansagar/slimhub_actions@main
+    - uses: rokibhasansagar/slimhub_actions@main
     - run: sudo apt-get update
-    - run: sudo apt-get -y install debootstrap
+    - run: sudo apt-get -y install debootstrap tree
     - run: sudo debootstrap --arch=amd64 sid rootfs
     - name: mount
       run: |
@@ -26,3 +26,4 @@ jobs:
     - run: sudo chroot rootfs /bin/apt-get -y install python3 wget git live-build debian-archive-keyring gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
     - run: sudo chroot rootfs /bin/wget https://github.com/dpkg123/lb-config/raw/main/build.py
     - run: sudo chroot rootfs /bin/python3 /build.py
+    - run: tree rootfs/ci
