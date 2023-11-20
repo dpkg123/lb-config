@@ -2,9 +2,11 @@ name: ci
 on:
   pull_request:
   workflow_dispatch:
+  push:
   
 jobs:
-  yaml-check:
+  live-build:
+    container: debian:bookworm
     runs-on: ubuntu-latest
     permissions:
       contents: write
