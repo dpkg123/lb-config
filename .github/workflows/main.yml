@@ -17,8 +17,7 @@ jobs:
 
   #  - uses: rokibhasansagar/slimhub_actions@main
     - run: apt-get update
-    - run: apt-get -y install live-build debian-archive-keyring gpg
+    - run: apt-get -y install live-build debian-archive-keyring gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
  #   - run: gpg --no-default-keyring --keyring /usr/share/keyrings/ubuntu-archive-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
     - run: lb config
     - run: lb build
-    - run: tree
