@@ -18,9 +18,11 @@ lb config noauto \
     --debug \
     --apt-secure false \
     --mirror-binary http://deb.debian.org/debian \
-    --mirror-binary-security https://mirrors.163.com/debian-security \
+    --mirror-binary-security https://security.debian.org/debian-security \
     --mirror-bootstrap http://deb.debian.org/debian \
     --mirror-chroot http://mirrors.163.com/debian \
     --mirror-chroot-security http://security.debian.org/debian-security \
     --mirror-debian-installer http://deb.debian.org/debian \
+    --apt-indices false \
+    --apt-recommends false \
     "${@}"
