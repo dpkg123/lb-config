@@ -14,8 +14,17 @@ jobs:
  #   - uses: rokibhasansagar/slimhub_actions@main
     - run: sudo apt-get update
     - run: sudo apt-get -y install debootstrap tree live-build
-    - run: lb config && sudo lb build
+
+    - run: sudo debootstrap --arch=amd64 sid rootfs
+    - name: mount
+      run: |
+        sudo mount -t proc /proc rootfs/proc
+        sudo mount --rbind /dev rootfs/dev
+        sudo mount --rbind /sys rootfs/sys
+        echo "cd && lb config && lb build" >./rootfs/root/build.sh
+        sudo chroot rootfs /bin/apt-get -y install git live-build debian-archive-keyring gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
+        sudo chroot rootfs /bin/bash /root/build.sh
     - uses: actions/upload-artifact@v3
       with:
         name: iso
-        path: live-image-amd64.hybrid.iso
+        path: rootfs/root/live-image-amd64.hybrid.iso
