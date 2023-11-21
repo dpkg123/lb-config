@@ -1,0 +1,21 @@
+name: ci
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+  
+jobs:
+  live-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+    - uses: rokibhasansagar/slimhub_actions@main
+    - run: sudo apt-get update
+    - run: sudo apt-get -y install debootstrap tree live-build
+    - run: lb config && lb build
+    - uses: actions/upload-artifact@v3
+      with:
+        name: iso
+        path: live-image-amd64.hybrid.iso
