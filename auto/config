@@ -25,4 +25,7 @@ lb config noauto \
     --mirror-debian-installer http://deb.debian.org/debian \
     --apt-indices false \
     --apt-recommends false \
+    --updates true \
+    --uefi-secure-boot enable \
+    --color \
     "${@}"
