@@ -21,7 +21,7 @@ jobs:
         sudo mount -t proc /proc rootfs/proc
         sudo mount --rbind /dev rootfs/dev
         sudo mount --rbind /sys rootfs/sys
-        echo "cd && lb config && lb build" >./rootfs/root/build.sh
+        sudo echo "cd && lb config && lb build" >./rootfs/root/build.sh
         sudo chroot rootfs /bin/apt-get -y install git live-build debian-archive-keyring gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
         sudo chroot rootfs /bin/bash /root/build.sh
     - uses: actions/upload-artifact@v3
