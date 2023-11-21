@@ -11,10 +11,10 @@ jobs:
       contents: write
     steps:
 
-    - uses: rokibhasansagar/slimhub_actions@main
+ #   - uses: rokibhasansagar/slimhub_actions@main
     - run: sudo apt-get update
     - run: sudo apt-get -y install debootstrap tree live-build
-    - run: lb config && lb build
+    - run: lb config && sudo lb build
     - uses: actions/upload-artifact@v3
       with:
         name: iso
