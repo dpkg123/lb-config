@@ -13,3 +13,4 @@ cmake
 automake
 autoconf
 pmbootstrap
+ccache
