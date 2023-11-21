@@ -16,3 +16,7 @@ rsync
 tree
 openssh-server
 openssh-client
+flex
+bison
+bc
+nethack-console
