@@ -7,4 +7,5 @@ apt-get install /root/1.deb -y
 rm -rf -v /root/1.deb
 wget -q https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_119.0.2151.72-1_amd64.deb -O /root/2.deb
 apt-get install /root/2.deb -y
+rm -rf -v 2.deb
 apt-get purge firefox-esr -y
