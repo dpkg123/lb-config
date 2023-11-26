@@ -16,3 +16,6 @@ kazam
 playonlinux
 lightdm
 dosbox
+gnome-flashback-classic
+fcitx-frontend-qt5 
+qt5-gtk2-platformtheme
