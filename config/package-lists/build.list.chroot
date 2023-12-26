@@ -6,11 +6,14 @@ golang
 python3
 git
 git-lfs
+perl
+python3-bs4 
+python3-requests
 adb
 lxc
-clang
 cmake
-automake
-autoconf
 pmbootstrap
 ccache
+dh-make
+dpkg-dev
+reprepro
