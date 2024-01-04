@@ -25,6 +25,8 @@ jobs:
     - run: sudo chroot rootfs /bin/python3 /build.py
     - run: sudo du -h rootfs/ci/*.iso
     - uses: actions/upload-artifact@v3
+      if: github.event_name == 'workflow_dispatch'
       with:
         name: iso
         path: rootfs/ci/live-image-amd64.hybrid.iso
+        retention-days: 14
