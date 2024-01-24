@@ -23,10 +23,37 @@ jobs:
     - run: sudo chroot rootfs /bin/apt-get -y install python3 wget git live-build debian-archive-keyring gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
     - run: sudo chroot rootfs /bin/wget https://github.com/dpkg123/lb-config/raw/main/build.py
     - run: sudo chroot rootfs /bin/python3 /build.py
-    - run: sudo du -h rootfs/ci/*.iso
     - uses: actions/upload-artifact@v3
       if: github.event_name == 'workflow_dispatch'
       with:
-        name: iso
+        name: iso-debian
         path: rootfs/ci/live-image-amd64.hybrid.iso
         retention-days: 14
+
+
+  live-build-devuan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+    - run: docker rmi -f $(docker images -q)
+    - run: wget -q https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh && NONINTERACTIVE=1 bash ./uninstall.sh -f -q
+    - run: git clone https://git.devuan.org/devuan/debootstrap
+    - run: cd debootstrap && sudo make install
+    - run: sudo debootstrap --arch=amd64 --variant=minbase stable rootfs
+    - name: mount
+      run: |
+        sudo mount -t proc /proc rootfs/proc
+        sudo mount --rbind /dev rootfs/dev
+        sudo mount --rbind /sys rootfs/sys
+    - run: sudo chroot rootfs /bin/apt-get -y install python3 wget git live-build debian-archive-keyring gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
+    - run: sudo chroot rootfs /bin/wget https://github.com/dpkg123/lb-config/raw/main/build.py
+    - run: sudo chroot rootfs /bin/python3 /build.py
+    - uses: actions/upload-artifact@v3
+      if: github.event_name == 'workflow_dispatch'
+      with:
+        name: iso-debian
+        path: rootfs/ci/live-image-amd64.hybrid.iso
+        retention-days: 14
+
