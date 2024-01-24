@@ -48,8 +48,8 @@ jobs:
         sudo mount --rbind /dev rootfs/dev
         sudo mount --rbind /sys rootfs/sys
     - run: sudo chroot rootfs apt -y install python3 wget git live-build gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
-    - run: sudo chroot rootfs /bin/wget https://github.com/dpkg123/lb-config/raw/main/build.py
-    - run: sudo chroot rootfs /bin/python3 /build.py
+    - run: sudo chroot rootfs wget https://github.com/dpkg123/lb-config/raw/main/build.py
+    - run: sudo chroot rootfs python3 /build.py
     - uses: actions/upload-artifact@v3
       if: github.event_name == 'workflow_dispatch'
       with:
