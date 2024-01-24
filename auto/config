@@ -9,7 +9,7 @@ lb config noauto \
     --debian-installer live \
     --debian-installer-distribution bookworm \
     --debian-installer-gui true \
-    --distribution bookworm \
+    --distribution stable \
     --iso-application "Buildroot" \
     --iso-publisher "Buildroot Project" \
     --iso-volume "Buildroot Live" \
