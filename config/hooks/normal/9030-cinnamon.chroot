@@ -1,4 +1,4 @@
 #!/bin/sh
 
 apt-get update
-apt-get install cinnamon -y 
+apt-get install cinnamon yarn -y 
