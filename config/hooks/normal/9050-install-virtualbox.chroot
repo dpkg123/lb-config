@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add -
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | \
+     tee -a /etc/apt/sources.list.d/virtualbox.list
+apt-get update
+apt-get install virtualbox-7.0

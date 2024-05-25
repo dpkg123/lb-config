@@ -23,7 +23,9 @@ jobs:
     - run: sudo chroot rootfs /bin/apt-get -y install python3 wget git live-build debian-archive-keyring gpg dosfstools genisoimage squashfs-tools xorriso grub-common grub-pc-bin grub-efi-amd64-bin nano
     - run: sudo chroot rootfs /bin/wget https://github.com/dpkg123/lb-config/raw/main/build.py
     - run: sudo chroot rootfs /bin/python3 /build.py
-    - uses: actions/upload-artifact@v3
+    - run: sudo du -h -s rootfs/ci/live*.iso
+      continue-on-error: true
+    - uses: actions/upload-artifact@v4
       if: github.event_name == 'workflow_dispatch'
       with:
         name: iso-debian
