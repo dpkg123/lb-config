@@ -1,7 +1,6 @@
 #!/bin/sh
 
 npm config set registry https://registry.npmmirror.com/
-npm install -g hexo-cli yarn
 rm -rf /var/lib/apt/lists
 rm -rf /var/cache/apt/archives
 apt-get update
