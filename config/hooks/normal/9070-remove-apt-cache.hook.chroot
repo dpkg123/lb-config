@@ -5,5 +5,5 @@ npm install -g hexo-cli yarn
 rm -rf /var/lib/apt/lists
 rm -rf /var/cache/apt/archives
 apt-get update
-apt-get update -y
+apt-get upgrade -y
 

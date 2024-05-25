@@ -1,4 +1,4 @@
-cinnamon
+obs-studio
 netcat-openbsd
 wpasupplicant
 wireless-tools
@@ -12,7 +12,6 @@ kate
 krita
 gimp
 kdenlive
-kazam
 playonlinux
 lightdm
 dosbox
