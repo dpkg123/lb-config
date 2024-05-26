@@ -4,7 +4,6 @@ gparted
 usbutils
 nvme-cli
 nano
-wget
 curl
 elinks
 fish
@@ -24,3 +23,5 @@ flatpak
 bleachbit
 fonts-noto-cjk
 locales
+squashfs-tools
+lightdm
