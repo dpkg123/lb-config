@@ -34,7 +34,7 @@ jobs:
         retention-days: 14
     - name: upload log
       uses: actions/upload-artifact@v4
-      if: github.event_name == 'workflow_push'
+      if: github.event_name == 'push'
       with:
         name: log
         path: rootfs/ci/log.txt
