@@ -25,9 +25,17 @@ jobs:
     - run: sudo chroot rootfs /bin/python3 /build.py
     - run: sudo du -h -s rootfs/ci/live*.iso
       continue-on-error: true
-    - uses: actions/upload-artifact@v4
+    - name: upload iso
+      uses: actions/upload-artifact@v4
       if: github.event_name == 'workflow_dispatch'
       with:
         name: iso-debian
         path: rootfs/ci/live-image-amd64.hybrid.iso
         retention-days: 14
+    - name: upload log
+      uses: actions/upload-artifact@v4
+      if: github.event_name == 'workflow_push'
+      with:
+        name: log
+        path: rootfs/ci/log.txt
+
