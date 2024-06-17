@@ -7,7 +7,7 @@ lb config noauto \
     --archive-area "main contrib non-free non-free-firmware" \
     --bootappend-live "boot=live components locales=zh_CN.UTF-8 keyboard-layouts=us" \
     --debian-installer cdrom \
-    --debian-installer-distribution bookworm \
+    --debian-installer-distribution stable \
     --debian-installer-gui true \
     --distribution stable \
     --iso-application "Buildroot" \
