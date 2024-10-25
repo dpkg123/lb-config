@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: write
     steps:
-    - run: sudobapt update
+    - run: sudo apt update
     - run: docker rmi -f $(docker images -q)
     - run: wget -q https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh && NONINTERACTIVE=1 bash ./uninstall.sh -f -q
     - run: sudo apt-get -y install debootstrap
