@@ -1,0 +1,17 @@
+name: ci
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    tags:
+      - '*.*'
+  
+jobs:
+  live-build:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') && github.ref =~ /^refs\/tags\/\d+\.\d+/)
+    permissions:
+      contents: write
+    steps:
+    - run: uname -a
+    - run: echo  ${{ github.ref }}
