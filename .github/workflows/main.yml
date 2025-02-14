@@ -11,7 +11,7 @@ jobs:
       contents: write
     steps:
     - run: sudo apt update
-    - run: docker rmi -f $(docker images -q)
+  #  - run: docker rmi -f $(docker images -q)
     - run: wget -q https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh && NONINTERACTIVE=1 bash ./uninstall.sh -f -q
     - run: sudo apt-get -y install debootstrap
     - run: sudo debootstrap --arch=amd64 --variant=minbase bookworm rootfs
