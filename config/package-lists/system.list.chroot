@@ -25,3 +25,5 @@ fonts-noto-cjk
 locales
 squashfs-tools
 lightdm
+gnome-flashback-common
+gnome-flashback
