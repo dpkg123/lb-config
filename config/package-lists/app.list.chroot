@@ -4,7 +4,7 @@ wpasupplicant
 wireless-tools
 wireshark-qt
 tcpdump
-rhythmbox 
+vlc
 clementine
 synaptic
 default-jdk
@@ -14,5 +14,4 @@ kdenlive
 dos2unix
 fcitx-frontend-qt5 
 qt5-gtk2-platformtheme
-openbox
 playonlinux
